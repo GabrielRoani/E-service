@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/contratacao.css" />
+    <script src="https://kit.fontawesome.com/0023ca248f.js" crossorigin="anonymous"></script>
+    <title>Contratação</title>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="logo">
+          <a href="../home/home.html"><img src="../assets/logo.png" alt="Logo" width="75" height="75" /></a>
+        </div>
+        <div class="title">
+          <h1>Contratar Serviços</h1>
+        </div>
+      </div>
+    </header>
+    <main>
+      <h2>Pretadores Recomendados</h2>
+      <div class="container">
+        <h3>Informações do Prestador</h3>
+        <div class="container">
+          <div class="containerInf">
+            <div class="inforPrest">
+              <div class="profile-pic">
+                <img src="" alt="profile-pic-prest" width="75" height="75" id="img-prest" />
+              </div>
+              <div>
+                <div>
+                  <p class="subtitle">Tipo:</p>
+                  <p id="tipoServ"></p>
+                </div>
+                <div>
+                  <p class="subtitle">Nome:</p>
+                  <p id="nome"></p>
+                </div>
+                <div>
+                  <p class="subtitle">Tempo de Serviço:</p>
+                  <p id="tempoServ"></p>
+                </div>
+                <div>
+                  <p class="subtitle">Classificação:</p>
+                  <p id="classif"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="modalSolicitacao" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Detalhes da Solicitação</h2>
+        <label for="descricaoSolicitacao">Descrição da Solicitação:</label>
+        <textarea id="descricaoSolicitacao" rows="4" placeholder="Descreva o serviço que você precisa..."></textarea>
+        <label for="dataContratacao">Data da Contratação:</label>
+        <input type="date" id="dataContratacao">
+        <button id="confirmarSolicitacao">Confirmar Contratação</button>
+      </div>
+    </div>
+      <div class="container">
+        <h3>Avaliações</h3>
+        <div>
+          <div class="containerInf">
+            <div class="avaliacao">
+              <div class="profile-pic">
+                <img src="" alt="profile-pic-client" width="75" height="75" id="img-client1" />
+              </div>
+              <div>
+                <div>
+                  <p class="subtitle">Nome:</p>
+                  <p id="nomeAval1"></p>
+                </div>
+                <div>
+                  <p class="subtitle">Avaliação:</p>
+                  <p id="avaliacao1"></p>
+                </div>
+              </div>
+            </div>
+            <div class="avaliacao">
+              <div class="profile-pic">
+                <img src="" alt="profile-pic-client" width="75" height="75" id="img-client2" />
+              </div>
+              <div>
+                <div>
+                  <p class="subtitle">Nome:</p>
+                  <p id="nomeAval2"></p>
+                </div>
+                <div>
+                  <p class="subtitle">Avaliação:</p>
+                  <p id="avaliacao2"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pagBtn">
+        <button id="anteriorBtn" onclick="btnAnterior()">
+          <i class="fa-solid fa-arrow-left-long"></i>
+        </button>
+        <button id="proximoBtn" onclick="btnProximo()">
+          <i class="fa-solid fa-arrow-right-long"></i>
+        </button>
+      </div>
+      <div class="solicitarBtn">
+          <button id="solicitarBtn" onclick="solicitarServ()">Solicitar Serviço</button>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2025 E-Service. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+    <script src="contratacao.js"></script>
+  </body>
+</html>

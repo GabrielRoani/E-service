@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cadastro de Cliente</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/cadastroCliente.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="scriptHome.js"></script>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg custom-navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="../home/home.html">
+          <img src="../../src/cadastro/logo.png" alt="Logo" class="logo">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+          aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav align-items-center me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-btn nav-link" href="../home/home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a id="botao-nav" class="nav-btn nav-link" href="../cadastro/prestador.html">Seja um Profissional</a>
+            </li>
+          </ul>
+
+          <div class="d-flex align-items-center gap-2 flex-wrap">
+            <div class="search-wrapper">
+              <input class="form-control search-bar" type="search" id="searchInput" placeholder="Buscar por nome..." aria-label="Buscar">
+              <button class="filter-toggle" onclick="toggleDropdown()" aria-label="Filtros">
+                <svg viewBox="0 0 24 24" width="20" height="20">
+                  <path d="M3 6h18M3 12h18M3 18h18" stroke="#333" stroke-width="2" stroke-linecap="round" />
+                </svg>
+              </button>
+          
+              <div class="filter-dropdown" id="filterDropdown">
+                <strong>Filtrar por profissão:</strong>
+                <label><input type="checkbox" value="eletricista"> Eletricista</label>
+                <label><input type="checkbox" value="encanador"> Encanador</label>
+                <label><input type="checkbox" value="pintor"> Pintor</label>
+                <label><input type="checkbox" value="pedreiro"> Pedreiro</label>
+                <label><input type="checkbox" value="jardineiro"> Jardineiro</label>
+                <button class="btn btn-primary btn-sm mt-2" onclick="filtrarProfissionais()">Aplicar Filtros</button>
+              </div>
+            </div>
+            <a class="profile-icon" href="../login/prestador.html" aria-label="Perfil">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 12a5 5 0 100-10 5 5 0 000 10zm0 2c-5.33 0-8 2.667-8 4v2h16v-2c0-1.333-2.67-4-8-4z" />
+              </svg>
+            </a>
+          </div>
+          <div class="sair">
+            <button class="nav-btn nav-link" id="sairBtn" onclick="sairMenu()">Sair</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+    <!-- Corpo do Formulário-->
+    <div class="container-formulario">
+
+    <form id="formulario-cliente">
+
+    <!-- Linha 1 Nome, CPF, Nascimento -->
+      <div class="linha-campos">
+
+        <div class="campos-maiores"> 
+          <label for="nome">Nome completo:</label>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+        </div>
+        
+        <div class="campo">
+          <label for="cpf">CPF:</label>
+          <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" required>
+        </div>
+
+        <div class="campo">
+          <label for="data-nascimento">Data de nascimento:</label>
+          <input type="text" id="data-nascimento" name="data-nascimento" placeholder="00/00/0000" required>
+        </div>
+      </div>
+
+    <!-- Linha 2: Sexo, Email, Telefone -->
+      <div class="linha-campos">
+
+        <div class="campo">
+
+          <label>Sexo:</label>
+          <div class="grupo-sexo">
+            <label><input type="radio" name="sexo" value="feminino" required> Feminino</label>
+            <label><input type="radio" name="sexo" value="masculino"> Masculino</label>
+            <label><input type="radio" name="sexo" value="outro"> Outro</label>
+          </div>
+        </div>
+        
+        <div class="campos-maiores">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="seuemail@email.com" required>
+        </div>
+
+        <div class="campo">
+          <label for="telefone">Telefone:</label>
+          <input type="text" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+        </div>
+      </div>
+
+    <!-- Linha 3: CEP, Logradouro, Número -->
+      <div class="linha-campos">
+
+        <div class="campo">
+          <label for="cep">CEP:</label>
+          <input type="text" id="cep" name="cep" placeholder="00000-000" required>
+        </div>
+        
+        <div class="campo">
+          <label for="logradouro">Logradouro:</label>
+          <input type="text" id="logradouro" name="logradouro" placeholder="Rua Exemplo" required>
+        </div>
+
+        <div class="campo">
+          <label for="numero">Número:</label>
+          <input type="text" id="numero" name="numero" placeholder="Nº" required>
+        </div>
+
+    <!-- Linha 4: Estado, Cidade -->
+        <div class="campo">
+          <label for="estado">Estado:</label>
+          <select id="estado" name="estado" required>
+          <option disabled selected>Selecione um Estado</option>
+          </select>
+
+        </div>
+        <div class="campo">
+          <label for="cidade">Cidade:</label>
+          <select id="cidade" name="cidade" required>
+          <option disabled selected>Selecione uma Cidade</option>
+          </select>
+        </div>
+      </div>
+
+
+    <!-- Senha -->
+      <div class="linha-campos">
+
+        <div class="campo">
+          <label for="senha">Senha:</label>
+          <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+        </div>
+        <div class="campo campo-grande">
+          <label for="confirmar-senha">Confirmar senha:</label>
+          <input type="password" id="confirmar-senha" name="confirmar-senha" placeholder="Confirme sua senha" required>
+        </div>
+      </div>
+
+    <!-- Botão Cadastrar -->
+      <div class="linha-campos">
+
+        <div class="campo">
+          <button type="submit" class="botao-cadastrar" onclick="salvarLogin()">Cadastrar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <footer class="text-center p-3">
+    <p>© Todos os direitos reservados - 2025</p>
+  </footer>
+
+  <script src="scriptFormularioCliente.js"></script>
+
+</body>
+</html>

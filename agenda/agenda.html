@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda</title>
+    <link rel="stylesheet" href="style_agenda.css">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css' rel='stylesheet' />
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/codigo-fonte/src/img/logo.png" alt="Logo da Empresa" class="logo-img"> </div>
+        <h1>Agenda</h1>
+    </header>
+    <main>
+        <section class="cards">
+            <div class="card" data-task-id="Reunião com cliente às 14h">
+                <div class="icon">👤✔️</div>
+                <input type="text" value="Reunião com cliente às 14h" readonly>
+                <div class="status-text"></div>
+                <div class="buttons">
+                    <button class="aceitar" data-task="Reunião com cliente às 14h">Aceitar</button>
+                    <button class="rejeitar" data-task="Reunião com cliente às 14h">Rejeitar</button>
+                </div>
+            </div>
+            <div class="card" data-task-id="Apresentação do projeto">
+                <div class="icon">👤✔️</div>
+                <input type="text" value="Apresentação do projeto" readonly>
+                <div class="status-text"></div>
+                <div class="buttons">
+                    <button class="aceitar" data-task="Apresentação do projeto">Aceitar</button>
+                    <button class="rejeitar" data-task="Apresentação do projeto">Rejeitar</button>
+                </div>
+            </div>
+            <div class="card" data-task-id="Chamada de vídeo com equipe">
+                <div class="icon">👤✔️</div>
+                <input type="text" value="Chamada de vídeo com equipe" readonly>
+                <div class="status-text"></div>
+                <div class="buttons">
+                    <button class="aceitar" data-task="Chamada de vídeo com equipe">Aceitar</button>
+                    <button class="rejeitar" data-task="Chamada de vídeo com equipe">Rejeitar</button>
+                </div>
+            </div>
+        </section>
+        <section class="calendario">
+            <h2>Mês Atual</h2>
+            <div id="calendar"></div>
+        </section>
+    </main>
+    <footer>
+        <p>© Todos os direitos reservados - 2025</p>
+    </footer>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js'></script>
+    <script src="script_agenda.js"></script>
+</body>
+</html> 

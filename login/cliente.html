@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/login.css">
+    <title>Login</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="../assets/logo.png" alt="Logo" width="75" height="75">
+            </div>
+            <div class="title">
+                <h1>Login</h1>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="prestador-container">
+                <div class="prestador-header">
+                    Quer ser ou é um prestador E-Service?
+                </div>
+                    <a href="prestador.html">Acessar</a>
+            </div>
+            <div class ="form-container">
+                <div class="form-header">
+                    <h2>Olá Cliente!</h2>
+                </div>
+                <form method="post">
+                    <div class="form-group">
+                        <label for="email">Insira seu email:</label>
+                        <input type="email" id="email" name="email" placeholder="email@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Insira sua senha:</label>
+                        <input type="password" id="password" name="password" placeholder="*************" required>
+                    </div>
+                    <div class="button-container-cliente">
+                        <button type="button" class="btn" onclick="registerClient()">Cadastrar</button>
+                        <button type="submit" class="btn" onclick="validarLoginCliente()">Entrar</button>
+                    </div>
+                </form>
+                <div class="secret-container-prestador">
+                    <p>É um prestador E-service?</p>
+                    <a type="button" onclick="acessarPrestador()">Clique aqui</a>
+                </div>
+            </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 E-Service. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="login.js"></script>
+</body>
+</html>

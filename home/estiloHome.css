@@ -1,0 +1,415 @@
+/* Resetando margens e preenchimentos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Navbar customizada sobre o Bootstrap */
+  .custom-navbar {
+    background-color: #0083ce;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* Logo e texto */
+  .custom-navbar .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .custom-navbar .logo {
+    width: 50px;
+    height: auto;
+  }
+  .custom-navbar .logo-text {
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.85rem;
+    line-height: 1;
+  }
+  
+  /* Botões “Home” e “Seja um Profissional” */
+  .custom-navbar .nav-item {
+    margin-left: 15px;
+  }
+  .custom-navbar .nav-btn {
+    background-color: #fff;              /* fundo branco */
+    color: #0077B6;                       /* texto azul */
+    border: 2px solid #DFF3FB;            /* borda azul clarinho */
+    padding: 8px 25px;                    /* ajuste de tamanho */
+    border-radius: 25px;                  /* forma “pill” */
+    font-weight: bold;
+    font-family: sans-serif;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  .custom-navbar .nav-btn:hover {
+    background-color: #B8E2F2;
+    border-color: #B8E2F2;
+  }
+  
+  /* Search wrapper */
+  .search-wrapper {
+    position: relative;
+    margin: 0 20px;
+    flex: 1;                              /* ocupa espaço restante */
+    max-width: 400px;
+  }
+  .search-wrapper .search-bar {
+    width: 100%;
+    padding: 8px 45px 8px 20px;           /* espaço para o ícone */
+    border-radius: 25px;                  /* borda arredondada */
+    border: 2px solid #DFF3FB;            /* borda igual aos botões */
+    outline: none;
+    font-size: 0.9rem;
+    color: #0077B6;
+    background-color: #fff;
+  }
+  .search-wrapper .search-bar::placeholder {
+    color: #0077B6;                       /* placeholder azul */
+  }
+  .search-wrapper .search-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .search-wrapper .search-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: #0077B6;                      /* ícone azul */
+  }
+  
+  /* Ícone de perfil */
+  .profile-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;               /* fundo branco */
+    border: 2px solid #DFF3FB;            /* borda azul clarinho */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .profile-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: #0077B6;                        /* silhueta azul */
+  }
+  
+  /* Efeito hover para os botões */
+  .nav-btn {
+    background-color: #fff;
+    color: #0077B6; /* Cor azul para o texto */
+    border: 2px solid #DFF3FB; /* Borda suave */
+    padding: 8px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-family: sans-serif;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  .nav-btn:hover {
+    background-color: #B8E2F2; /* Cor azul suave para o fundo */
+    border-color: #B8E2F2; /* Borda azul suave */
+  }
+  .sair {
+    margin: 15px;
+  }
+  /* Estilo dos botões em dispositivos menores */
+  @media (max-width: 768px) {
+    .nav-btn {
+      padding: 6px 20px;
+    }
+  }
+  
+  /* Responsividade */
+  @media (max-width: 991px) {
+    .search-wrapper, .profile-icon { margin: 10px 0; }
+  }
+  
+  /* Main Section */
+  main {
+    padding: 30px 20px;
+    background-color: #f4f4f4;
+    min-height: 767px;
+  }
+  
+  /* Carousel Section */
+  .carousel-section {
+    background-color: #fff;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .carousel {
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+  }
+  
+  .carousel img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  /* Overlay */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+  }
+  
+  /* Rectangle Container */
+  .rectangle-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    width: 90%;
+    max-width: 1000px;
+    pointer-events: auto;
+  }
+  
+  .rectangle {
+    background-color: rgba(0, 0, 0, 0.11);
+    color: #fff;
+    flex: 1;
+    max-width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .rectangle-image {
+    width: 70px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .rectangle h3 { margin: 10px 0; }
+  
+  /* Footer */
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f7b500;
+    text-align: center;
+    color: #000;
+    height: 75px;
+    font-weight: bold;
+    border-top: 5px solid #000;
+  }
+  
+  /* Info Box */
+  .info-box {
+    display: block;
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .info-box:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  .info-box h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  /* Caixa */
+  .caixa {
+    background-color: #ffffff;
+    border-left: 6px solid #0077B6;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .caixa:hover {
+    background-color: #F1F8FF;
+    border-left: 6px solid #FDB813;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .caixa h2 {
+    color: #0077B6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+  
+  .caixa p {
+    color: #333333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+  }
+  
+  /* Responsividade para telas menores */
+  @media (max-width: 768px) {
+    .caixa {
+      padding: 15px;
+      margin: 15px 0;
+    }
+    .caixa h2 { font-size: 22px; }
+  }
+  .search-wrapper {
+    position: relative;
+  }
+
+  .search-bar {
+    padding-right: 40px;
+  }
+
+  .filter-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: none;
+    width: 250px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  .filter-toggle {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .filter-dropdown label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  .info-item {
+    position: relative;
+    margin-bottom: 10px;
+  }
+  
+  .info-box {
+    display: block;
+    padding: 10px;
+    background-color: #f1f1f1;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .info-box:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .folder {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 105%;
+    width: 200px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 100;
+  }
+
+
+/* Estilos para os Resultados da Busca de Prestadores  */
+
+.prestadores-grid {
+    text-align: left; /* Texto Prestadores Encontrados */
+}
+
+/* CARDS DOS PRESTADORES */
+.prestador-card {
+    display: flex;
+    height: 100%; 
+    background-color: #fff;     /* Fundo branco para o card */
+    border: 1px solid #e0e0e0;  /* Borda cinza em volta do card */ 
+    border-radius: 8px;           /* Bordas arredondadas */
+    padding: 1rem;                /* Espaçamento interno */
+    text-align: center;           /* Centraliza texto e botão */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombra */
+    margin-bottom: 1rem;          /* Espaço entre os cards de baixo */      
+    flex-direction: column;       /* Itens dentro do card em coluna e nao um do lado do outro*/
+    height: 100%;               
+}
+
+/* IMAGEM */
+.prestador-card img {
+    width: 100%;              /* 100% da LARGURA do card */
+    height: 180px;            /* Altura para todas as imagens */
+    object-fit: cover;        /* Imagem preenche o espaço sem distorcer */
+    border-radius: 8px;       /* Arredonda as bordas */
+    margin-bottom: 1rem;      /* Espaço entre a imagem e o nome  */
+}
+
+/* TEXTOS DENTRO DO CARD  */
+.prestador-card h3 {
+    color: #0077B6;                
+    font-size: 1.25rem;
+}
+
+.prestador-card p {
+    margin-bottom: 0.5rem;
+    flex-grow: 1;
+}
+
+.prestador-card a {
+    text-decoration: none;
+    background-color: #f7b500; /* Usando a cor do seu footer para destaque */
+    color: #000;
+    padding: 8px 15px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.prestador-card a:hover {
+    background-color: #ac7e00; 
+}

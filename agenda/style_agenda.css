@@ -1,0 +1,334 @@
+:root {
+    --primary-blue: #0083ce;
+    --secondary-blue: #0077B6;
+    --light-blue: #B8E2F2;
+    --accent-yellow: #f7b500;
+    --white: #ffffff;
+    --light-gray: #f4f4f4;
+    --medium-gray: #DFF3FB;
+    --dark-gray: #333333;
+    --black: #000000;
+    --error-red: #ff0000;
+    --success-green: #28a745;
+    --light-success-green: #d4edda;
+    --light-error-red: #f8d7da;
+
+    --border-radius-sm: 5px;
+    --border-radius-md: 10px;
+    --border-radius-lg: 25px;
+
+    --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 6px 10px rgba(0, 0, 0, 0.15);
+
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: var(--primary-blue);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--shadow-sm);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 60px;
+    text-decoration: none;
+}
+
+.logo img.logo-img {
+    width: 50px;
+    height: auto;
+}
+
+header h1 {
+    margin-right: 20px;
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: right;
+}
+
+main {
+    flex: 1;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.cards {
+    width: 45%;
+    min-width: 300px;
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    border-left: 4px solid var(--secondary-blue);
+    transition: all var(--transition-normal);
+}
+
+.cards:hover {
+    box-shadow: var(--shadow-lg);
+    border-left-color: var(--accent-yellow);
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: var(--border-radius-sm);
+    background-color: var(--light-gray);
+    transition: all var(--transition-normal);
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-sm);
+}
+
+.card .icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: var(--secondary-blue);
+}
+
+.card input {
+    flex: 1;
+    min-width: 0;
+    padding: 10px 15px;
+    margin-right: 15px;
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--border-radius-sm);
+    font-size: 1rem;
+    transition: all var(--transition-fast);
+    background-color: var(--white);
+}
+
+.card input:focus {
+    outline: none;
+    border-color: var(--secondary-blue);
+    box-shadow: 0 0 0 2px rgba(0, 119, 182, 0.2);
+}
+
+.status-text {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+.card.accepted {
+    background-color: var(--light-success-green);
+    border-left: 4px solid var(--success-green);
+}
+
+.card.accepted .icon {
+    color: var(--success-green);
+}
+
+.card.accepted .aceitar {
+    background-color: var(--success-green);
+    color: var(--white);
+    border-color: var(--success-green);
+    pointer-events: none;
+}
+.card.accepted .aceitar:hover {
+    background-color: var(--success-green);
+    color: var(--white);
+}
+
+.card.accepted .rejeitar {
+    display: none;
+}
+
+.card.rejected {
+    background-color: var(--light-error-red);
+    border-left: 4px solid var(--error-red);
+    opacity: 0.8;
+}
+.card.rejected .icon {
+    color: var(--error-red);
+}
+
+.card.rejected .rejeitar {
+    background-color: var(--error-red);
+    color: var(--white);
+    border-color: var(--error-red);
+    pointer-events: none;
+}
+.card.rejected .rejeitar:hover{
+    background-color: var(--error-red);
+    color: var(--white);
+}
+
+.card.rejected .aceitar {
+    display: none;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.buttons button {
+    padding: 8px 20px;
+    border: none;
+    border-radius: var(--border-radius-lg);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    min-width: 100px;
+    text-align: center;
+}
+
+.aceitar {
+    background-color: var(--secondary-blue);
+    color: var(--white);
+    border: 2px solid var(--secondary-blue);
+}
+
+.aceitar:hover {
+    background-color: var(--white);
+    color: var(--secondary-blue);
+}
+
+.rejeitar {
+    background-color: var(--white);
+    color: var(--secondary-blue);
+    border: 2px solid var(--secondary-blue);
+}
+
+.rejeitar:hover {
+    background-color: var(--secondary-blue);
+    color: var(--white);
+}
+
+.calendario {
+    width: 45%;
+    min-width: 300px;
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    border-left: 4px solid var(--secondary-blue);
+    transition: all var(--transition-normal);
+}
+
+.calendario:hover {
+    box-shadow: var(--shadow-lg);
+    border-left-color: var(--accent-yellow);
+}
+
+.calendario h2 {
+    color: var(--secondary-blue);
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.fc-event.event-accepted {
+    background-color: var(--success-green) !important;
+    border-color: var(--success-green) !important;
+}
+
+footer {
+    background-color: var(--accent-yellow);
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+    color: var(--black);
+    border-top: 5px solid var(--black);
+}
+
+@media (max-width: 991px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .cards, .calendario {
+        width: 100%;
+        max-width: 700px;
+        margin-bottom: 30px;
+    }
+
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    header h1 {
+        font-size: 1.3rem;
+        margin-right: 10px;
+    }
+
+    .buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .buttons button {
+        margin-bottom: 5px;
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.2rem;
+    }
+    .card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .card input {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .buttons {
+        width: 100%;
+        flex-direction: column;
+    }
+    .buttons button {
+        width: 100%;
+        flex-grow: 0;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+}
